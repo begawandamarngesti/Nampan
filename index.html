@@ -391,6 +391,37 @@
   .track-step.current .tstitle{ color:var(--turmeric-deep); }
   .track-step .tsdesc{ font-size:12px; color:var(--ink-soft); margin-top:2px; }
 
+
+  /* ---------- Foto bukti keamanan pangan (detail produk) ---------- */
+  .safety-box{ margin:0 0 16px; }
+  .safety-box h4{ margin:0 0 8px; font-size:12px; text-transform:uppercase; letter-spacing:.8px; color:var(--ink-soft); }
+  .safety-gal{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .safety-gal figure{ margin:0; cursor:pointer; }
+  .safety-gal img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px; border:1px solid var(--sage-line); display:block; background:var(--sage); }
+  .safety-gal figcaption{ font-size:11.5px; font-weight:700; color:var(--ink-soft); margin-top:6px; text-align:center; }
+  .safety-big{ width:100%; border-radius:16px; display:block; }
+
+  /* ---------- Status disiapkan / dibatalkan / banding ---------- */
+  .status-pill.disiapkan{ background:#DCE9F7; color:#1F4E86; }
+  .status-pill.batal{ background:#EBEBEB; color:#555; }
+  .prep-bar{ height:5px; border-radius:99px; background:var(--sage-line); overflow:hidden; margin-top:7px; }
+  .prep-bar i{ display:block; height:100%; width:100%; background:#3C7BC4; transition:width .2s linear; }
+  .prep-left{ font-size:11px; font-weight:700; color:#1F4E86; margin-top:4px; }
+  .btn-cancel{ background:#fff; color:var(--sambal); border:1.5px solid #E8C4BF; padding:5px 10px; font-size:11px; border-radius:10px; font-weight:700; }
+  .btn-cancel:hover{ background:#F4DEDE; }
+  .reason-list{ display:flex; flex-direction:column; gap:8px; margin:12px 0; }
+  .reason-opt{ display:flex; align-items:center; gap:10px; border:1.5px solid var(--sage-line); border-radius:12px; padding:11px 14px; font-size:13.5px; font-weight:600; cursor:pointer; }
+  .reason-opt:has(input:checked){ border-color:var(--leaf); background:var(--sage); }
+  .reason-opt input{ accent-color:var(--leaf); }
+  .reason-text{ width:100%; border:1px solid var(--sage-line); border-radius:10px; padding:9px 11px; font-size:13px; min-height:70px; margin-bottom:10px; }
+  .refund-btns{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px; }
+  @media (max-width:520px){ .refund-btns{ grid-template-columns:1fr; } }
+  .proc-box{ text-align:center; padding:26px 8px; }
+  .proc-box .spin{ width:44px; height:44px; border-radius:50%; border:5px solid var(--sage-line); border-top-color:var(--leaf); margin:0 auto 16px; animation:spinR .8s linear infinite; }
+  @keyframes spinR{ to{ transform:rotate(360deg); } }
+  .proc-box h3{ margin:0 0 6px; font-size:19px; }
+  .proc-box p{ margin:0; font-size:13px; color:var(--ink-soft); }
+
   /* ---------- Edit produk ---------- */
   .row-card.clickable{ cursor:pointer; transition:box-shadow .15s; }
   .row-card.clickable:hover{ box-shadow:0 4px 14px -6px rgba(14,27,51,.25); }
@@ -703,6 +734,38 @@
   .ie-row{ display:flex; justify-content:space-between; font-size:13px; padding:6px 0; border-bottom:1px solid var(--sage-line); }
   .ie-row span{ color:var(--ink-soft); }
   .ie-note{ font-size:12.5px; color:var(--ink-soft); margin-top:10px; line-height:1.5; }
+  /* ---------- AUTO MATCHING ---------- */
+  .am-btn{ background:linear-gradient(135deg,var(--turmeric),#F2B84B); color:var(--ink); border:none; border-radius:14px; padding:12px 18px; font-size:14px; font-weight:800; display:inline-flex; align-items:center; gap:8px; box-shadow:0 8px 18px -8px rgba(224,154,46,.7); cursor:pointer; }
+  .am-btn:hover{ filter:brightness(.96); }
+  .am-sec{ margin-bottom:26px; }
+  .am-sec > h4{ margin:0 0 12px; font-size:14.5px; display:flex; align-items:center; gap:8px; }
+  .am-sec > h4 i{ font-style:normal; background:var(--leaf); color:#fff; width:22px; height:22px; border-radius:99px; display:inline-flex; align-items:center; justify-content:center; font-size:12px; }
+  .am-row{ display:grid; grid-template-columns:150px minmax(0,1fr) 150px 38px; gap:10px; align-items:start; padding:14px; border:1px solid var(--sage-line); border-radius:16px; margin-bottom:10px; background:#FBFDFB; }
+  .am-row select, .am-row input{ width:100%; border:1.5px solid var(--sage-line); border-radius:10px; padding:11px 12px; font-size:14px; background:#fff; font-family:inherit; }
+  .am-row .hint{ grid-column:2 / 4; margin-top:-2px; }
+  .am-qty{ display:flex; align-items:center; gap:6px; } .am-qty small{ font-weight:700; color:var(--ink-soft); font-size:12px; }
+  .am-del{ border:1.5px solid #E8C4BF; background:#fff; color:var(--sambal); border-radius:10px; height:40px; font-size:16px; font-weight:800; cursor:pointer; }
+  .am-add{ width:100%; border:1.5px dashed var(--leaf-light); background:var(--sage); color:var(--leaf); border-radius:14px; padding:13px; font-weight:800; font-size:14px; cursor:pointer; }
+  .am-add:hover{ background:#DDEBE2; }
+  .am-seg{ display:flex; gap:8px; flex-wrap:wrap; }
+  .am-seg button{ border:1.5px solid var(--sage-line); background:#fff; border-radius:99px; padding:9px 16px; font-size:13px; font-weight:700; color:var(--ink-soft); cursor:pointer; }
+  .am-seg button.on{ background:var(--leaf); color:#fff; border-color:var(--leaf); }
+  .am-range{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px; }
+  .am-range input{ width:100%; border:1.5px solid var(--sage-line); border-radius:10px; padding:11px 12px; font-size:14px; font-family:inherit; }
+  .am-status{ margin-top:12px; padding:10px 14px; border-radius:12px; font-size:13px; font-weight:700; }
+  .am-status.ok{ background:#E3F4E8; color:#1E7A43; } .am-status.over{ background:#F9E1DE; color:var(--sambal); } .am-status.under{ background:#FFF3D6; color:#8A6A12; }
+  .am-bd{ display:flex; flex-direction:column; gap:8px; }
+  .am-bd .co-line b{ font-family:'Space Mono',monospace; font-size:13px; }
+  .am-bd .rate{ font-size:11px; font-weight:800; background:var(--sage); color:var(--leaf-2); padding:2px 8px; border-radius:99px; margin-left:6px; }
+  .am-bd .rate.am{ background:#F6E3BB; color:#8A6A12; }
+  .am-bd hr{ border:none; border-top:1px dashed var(--sage-line); margin:4px 0; }
+  .am-sub-note{ font-size:12.5px; color:var(--ink-soft); background:var(--sage); border-radius:12px; padding:10px 12px; margin-top:12px; line-height:1.5; }
+  @media (max-width:640px){
+    .am-row{ grid-template-columns:1fr 1fr; }
+    .am-row .hint{ grid-column:1 / -1; }
+    .am-row > :nth-child(2){ grid-column:1 / -1; order:3; }
+    .am-del{ justify-self:end; width:38px; }
+  }
 </style>
 </head>
 <body>
@@ -962,7 +1025,7 @@ function renderShell(content){
 
   const buyerNav = [
     {key:'home', label:'Beranda', icon:ICON.home},
-    {key:'orders', label:'Pesanan', icon:ICON.bell, badge: ORDERS.filter(o=>o.status==='menunggu_penilaian'||o.status==='menunggu_pickup'||o.status==='dikirim').length},
+    {key:'orders', label:'Pesanan', icon:ICON.bell, badge: ORDERS.filter(o=>o.status==='menunggu_penilaian'||o.status==='menunggu_pickup'||o.status==='dikirim'||o.status==='disiapkan').length},
     {key:'impact', label:'Berdampak', icon:ICON.leaf},
     {key:'jawara', label:'Jawara Buyer', icon:ICON.trophy},
     {key:'profile', label:'Profil', icon:ICON.user},
@@ -975,7 +1038,7 @@ function renderShell(content){
     {key:'report', label:'Laporan', icon:ICON.chart},
   ];
   const nav = isBuyer ? buyerNav : supplierNav;
-  const activeKey = state.screen === 'detail' || state.screen === 'checkout' || state.screen === 'success' || state.screen === 'tracking' ? 'home' :
+  const activeKey = state.screen === 'detail' || state.screen === 'automatch' || state.screen === 'ampay' || state.screen === 'checkout' || state.screen === 'success' || state.screen === 'tracking' ? 'home' :
                      state.screen === 'addproduct' || state.screen === 'editproduct' ? 'products' :
                      state.screen === 'chat' ? (state.chatKind==='sale' ? 'sales' : 'orders') :
                      state.screen;
@@ -1104,6 +1167,8 @@ function renderBuyerScreen(){
   switch(state.screen){
     case 'detail': return renderProductDetail();
     case 'checkout': return renderCheckout();
+    case 'automatch': return renderAutoMatch();
+    case 'ampay': return renderAmPay();
     case 'success': return renderCheckoutSuccess();
     case 'orders': return renderBuyerOrders();
     case 'tracking': return renderTracking();
@@ -1129,6 +1194,7 @@ function renderBuyerHome(){
   return `
   <div class="page-head">
     <div><div class="eyebrow">Beranda</div><h1>Temukan sisa makanan di sekitarmu</h1><div class="sub">${list.length} produk tersedia untuk konsumsi maupun pengolahan lanjutan.</div></div>
+    <button class="am-btn" onclick="openAutoMatch()">⚡ Auto Matching</button>
   </div>
 
   <div class="filter-bar">
@@ -1207,9 +1273,59 @@ function renderProductDetail(){
         <div class="fact-row"><span>Penyedia</span><span>${p.supplier}</span></div>
         <div class="fact-row"><span>Jarak ke lokasimu</span><span>±${c.km} km</span></div>
       </div>
+      ${safetyGalleryHTML(p)}
       <button class="btn btn-primary btn-block" onclick="startCheckout('${p.id}')">Beli Produk Ini</button>
     </div>
   </div>`;
+}
+
+
+/* ---------- Foto bukti keamanan pangan (SVG ringan, dibuat otomatis) ---------- */
+const CHILLED_IDS = ['p5','p10','p11','p12','p14'];
+const HOT_IDS = ['p1','p3','p7','p8','p13','p15'];
+function safetyInfo(p){
+  const sf = p.safety || {};
+  let temp, store;
+  if(sf.temp !== undefined && sf.temp !== '' && !isNaN(+sf.temp)){ temp = +sf.temp; store = sf.store || 'Penyimpanan'; }
+  else if(CHILLED_IDS.includes(p.id)){ temp = 4; store = 'Chiller / lemari pendingin'; }
+  else if(HOT_IDS.includes(p.id)){ temp = 65; store = 'Wadah hangat tertutup'; }
+  else { temp = 26; store = 'Suhu ruang, kering'; }
+  return { temp, store };
+}
+function svgEsc(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function svgWrap(t, n){ const w = String(t).split(' '), L = ['']; w.forEach(x=>{ if((L[L.length-1]+' '+x).trim().length > n && L.length < 3) L.push(x); else L[L.length-1] = (L[L.length-1]+' '+x).trim(); }); return L; }
+function svgURI(svg){ return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg); }
+function genThermoImg(p){
+  const {temp, store} = safetyInfo(p);
+  const frac = Math.max(.08, Math.min(1, (temp + 10) / 110));
+  const top = 40, bot = 200, h = Math.round((bot - top) * frac), y = bot - h;
+  const ticks = [0,1,2,3,4,5].map(i=>`<line x1="92" y1="${top + i*32}" x2="${i%2?100:106}" y2="${top + i*32}" stroke="#6B7C70" stroke-width="2"/>`).join('');
+  const st = svgWrap(store, 18).map((l,i)=>`<text x="230" y="${176 + i*14}" font-size="11" fill="#3E4F44" text-anchor="middle">${svgEsc(l)}</text>`).join('');
+  return svgURI(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><rect width="300" height="300" fill="#E4EFEA"/><rect x="14" y="14" width="272" height="272" rx="22" fill="#fff" stroke="#CFE0D6"/><text x="150" y="40" font-size="13" font-weight="700" fill="#1F5F4A" text-anchor="middle">CEK SUHU PENYIMPANAN</text><rect x="110" y="${top+8}" width="22" height="${bot-top+8}" rx="11" fill="#EEF3F0" stroke="#9FB3A6" stroke-width="2.5"/><rect x="116" y="${y+8}" width="10" height="${h}" rx="5" fill="#D9473A"/><circle cx="121" cy="222" r="21" fill="#D9473A" stroke="#9FB3A6" stroke-width="2.5"/><circle cx="114" cy="215" r="6" fill="#fff" opacity=".45"/>${ticks}<rect x="160" y="70" width="108" height="62" rx="10" fill="#1E2A22"/><text x="214" y="115" font-size="38" font-weight="800" fill="#7CF0B0" text-anchor="middle" font-family="monospace">${temp}°C</text>${st}<text x="150" y="268" font-size="11" fill="#6B7C70" text-anchor="middle">${svgEsc(p.name.slice(0,34))}</text></svg>`);
+}
+function genLabelImg(p){
+  const name = svgWrap(p.name, 22).map((l,i)=>`<text x="40" y="${96 + i*20}" font-size="${i?15:17}" font-weight="800" fill="#1E2A22">${svgEsc(l)}</text>`).join('');
+  const hh = hashStr(p.id); let bars = '', x = 40;
+  for(let i=0;i<30;i++){ const w = 1 + ((hh >> (i%24)) & 3); bars += `<rect x="${x}" y="228" width="${w}" height="26" fill="#1E2A22"/>`; x += w + 2; if(x > 150) break; }
+  const exp = p.exp ? fmtDT(p.exp) : '-';
+  return svgURI(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><rect width="300" height="300" fill="#F3EBD6"/><rect x="22" y="18" width="256" height="264" rx="16" fill="#fff" stroke="#E2D6B2"/><rect x="22" y="18" width="256" height="44" rx="16" fill="#1F5F4A"/><rect x="22" y="44" width="256" height="18" fill="#1F5F4A"/><text x="150" y="46" font-size="15" font-weight="800" fill="#fff" text-anchor="middle">LABEL PRODUK</text>${name}<text x="40" y="150" font-size="11" fill="#6B7C70">Penyedia</text><text x="40" y="165" font-size="12.5" font-weight="700" fill="#1E2A22">${svgEsc(p.supplier.slice(0,30))}</text><text x="40" y="188" font-size="11" fill="#6B7C70">Kedaluwarsa</text><text x="40" y="203" font-size="12.5" font-weight="700" fill="#BE4A3C">${svgEsc(exp)}</text>${bars}<g transform="rotate(-12 222 236)"><rect x="170" y="212" width="104" height="44" rx="8" fill="none" stroke="#1F5F4A" stroke-width="3"/><path d="M180 234l7 7 12-14" fill="none" stroke="#1F5F4A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><text x="237" y="231" font-size="11" font-weight="800" fill="#1F5F4A" text-anchor="middle">AMAN</text><text x="237" y="246" font-size="11" font-weight="800" fill="#1F5F4A" text-anchor="middle">DIMAKAN</text></g></svg>`);
+}
+function safetyPhotos(p){
+  const sf = p.safety || {};
+  return { thermo: sf.thermo || genThermoImg(p), label: sf.label || genLabelImg(p) };
+}
+function safetyGalleryHTML(p){
+  if(p.cat !== 'k') return '';
+  const ph = safetyPhotos(p), t = safetyInfo(p).temp;
+  return `<div class="safety-box"><h4>Bukti keamanan pangan</h4><div class="safety-gal">
+    <figure onclick="openSafetyPhoto('${p.id}','label')"><img src="${ph.label}" alt="Foto label produk" loading="lazy" decoding="async"><figcaption>🏷️ Label produk</figcaption></figure>
+    <figure onclick="openSafetyPhoto('${p.id}','thermo')"><img src="${ph.thermo}" alt="Foto termometer" loading="lazy" decoding="async"><figcaption>🌡️ Termometer (${t}°C)</figcaption></figure>
+  </div></div>`;
+}
+function openSafetyPhoto(id, kind){
+  const p = PRODUCTS.find(x=>x.id===id); if(!p) return;
+  const ph = safetyPhotos(p);
+  openModal(`<div class="modal-head"><h2>${kind==='label'?'Label produk':'Foto termometer'}</h2><button class="x-btn" onclick="closeModal()">✕</button></div><img class="safety-big" src="${kind==='label'?ph.label:ph.thermo}" alt="">`, 'modal-sm');
 }
 
 /* ---------- Checkout ---------- */
@@ -1238,7 +1354,8 @@ function coTotals(p){
   const fee = q ? q.fee : 0;
   const v = (state.vouchers||[]).find(x=>x.id===cd.voucher && !x.used);
   const disc = v ? Math.min(v.max, Math.round(sub*v.pct/100/100)*100) : 0;
-  return { sub, fee, disc, total: sub + fee - disc, q, o, v };
+  const svcRate = p.cat==='k' ? SVC_K : SVC_N, svc = Math.round(sub*svcRate);
+  return { sub, fee, disc, svcRate, svc, total: sub + fee + svc - disc, q, o, v };
 }
 function coSideHTML(p){
   const t = coTotals(p), cd = state.checkoutData;
@@ -1250,6 +1367,7 @@ function coSideHTML(p){
     </div>
     <div class="co-line"><span>${cd.qty||1} × ${rupiah(cd.unit||p.price)}</span><b>${rupiah(t.sub)}</b></div>
     <div class="co-line"><span>Ongkos kirim${t.o?` (${t.o.l})`:''}</span><b>${t.o?(t.fee?rupiah(t.fee):'Gratis'):'–'}</b></div>
+    <div class="co-line"><span>Biaya layanan ${p.cat==='k'?'konsumsi':'non-konsumsi'} (${pct(t.svcRate)})</span><b>${rupiah(t.svc)}</b></div>
     ${vs.length?`<div class="co-line"><span>Voucher diskon</span>
       <select onchange="state.checkoutData.voucher=this.value;render()"><option value="">Tidak pakai</option>${vs.map(v=>`<option value="${v.id}" ${cd.voucher===v.id?'selected':''}>${v.label}</option>`).join('')}</select></div>`:''}
     ${t.disc?`<div class="co-line disc"><span>Diskon</span><b>−${rupiah(t.disc)}</b></div>`:''}
@@ -1303,6 +1421,13 @@ function renderCheckout(){
       <button class="btn btn-primary btn-block big" onclick="checkoutStep2Next()">Lanjutkan ke Pembayaran</button>
     ` : `
       <h3>3 · Pembayaran</h3>
+      <div class="am-bd" style="margin-bottom:18px;padding:16px;border:1px solid var(--sage-line);border-radius:16px;background:#FBFDFB">
+        <div class="co-line"><span>${cd.qty||1} × ${rupiah(cd.unit||p.price)} · ${p.name}</span><b>${rupiah(t.sub)}</b></div>
+        <div class="co-line"><span>Ongkos kirim${t.o?` (${t.o.l})`:''}</span><b>${t.fee?rupiah(t.fee):'Gratis'}</b></div>
+        <div class="co-line"><span>Biaya layanan ${p.cat==='k'?'konsumsi':'non-konsumsi'}<span class="rate">${pct(t.svcRate)}</span></span><b>${rupiah(t.svc)}</b></div>
+        ${t.disc?`<div class="co-line disc"><span>Diskon voucher</span><b>−${rupiah(t.disc)}</b></div>`:''}
+        <div class="co-total"><span>Total bayar</span><b>${rupiah(t.total)}</b></div>
+      </div>
       <div class="qris-box">
         <img src="data:image/jpeg;base64,${QRIS_IMG}" alt="Kode QRIS Nampan.id" style="width:100%;max-width:300px;border-radius:16px;margin:0 auto 14px;display:block;box-shadow:var(--shadow-card);">
         <div class="qris-total">${rupiah(t.total)}</div>
@@ -1362,10 +1487,9 @@ function confirmPayment(){
   const p = PRODUCTS.find(x=>x.id===state.productId), cd = state.checkoutData;
   const t = coTotals(p);
   const newOrderId = uid('o');
-  const initialStatus = cd.method === 'jemput' ? 'menunggu_pickup' : 'dikirim';
   ORDERS.unshift({
     id: newOrderId, productId: p.id, qty: cd.qty, buyerName: cd.name, ship: cd.method, total: t.total,
-    status: initialStatus, rating:null, review:'', createdAt: new Date().toISOString()
+    status: 'disiapkan', prepEnd: Date.now() + PREP_MS, rating:null, review:'', createdAt: new Date().toISOString()
   });
   const shipMap = { jemput:'diambil', antar:'diantar' };
   MY_SALES.unshift({ id: uid('s'), productId: p.id, qty: cd.qty, buyerName: cd.name, phone: cd.wa, ship: shipMap[cd.method]||cd.method,
@@ -1677,10 +1801,10 @@ function renderCheckoutSuccess(){
 }
 
 function renderBuyerOrders(){
-  const groups = { dikirim:[], menunggu_penilaian:[], menunggu_pickup:[], selesai:[] };
+  const groups = { disiapkan:[], dikirim:[], menunggu_penilaian:[], menunggu_pickup:[], selesai:[], dibatalkan:[] };
   ORDERS.forEach(o => groups[o.status] && groups[o.status].push(o));
-  const labels = { dikirim:'Sedang Dikirim', menunggu_penilaian:'Menunggu Penilaian', menunggu_pickup:'Menunggu Pick Up', selesai:'Selesai' };
-  const pillClass = { dikirim:'dikirim', menunggu_penilaian:'nilai', menunggu_pickup:'pickup', selesai:'selesai' };
+  const labels = { disiapkan:'Disiapkan', dikirim:'Sedang Dikirim', menunggu_penilaian:'Menunggu Penilaian', menunggu_pickup:'Menunggu Pick Up', selesai:'Selesai', dibatalkan:'Dibatalkan' };
+  const pillClass = { disiapkan:'disiapkan', dikirim:'dikirim', menunggu_penilaian:'nilai', menunggu_pickup:'pickup', selesai:'selesai', dibatalkan:'batal' };
 
   const groupHtml = Object.keys(groups).map(key=>{
     if(groups[key].length===0) return '';
@@ -1696,7 +1820,9 @@ function renderBuyerOrders(){
 function renderOrderCard(o, pillClass){
   const p = PRODUCTS.find(x=>x.id===o.productId);
   const isRatingOpen = state.ratingOpenFor === o.id;
-  const statusLabel = o.status==='dikirim' ? 'Sedang Dikirim' : o.status==='menunggu_penilaian' ? 'Beri Nilai' : o.status==='menunggu_pickup' ? 'Menunggu Pick Up' : 'Selesai';
+  const statusLabel = o.status==='disiapkan' ? 'Disiapkan' : o.status==='dikirim' ? 'Sedang Dikirim' : o.status==='menunggu_penilaian' ? 'Beri Nilai' : o.status==='menunggu_pickup' ? 'Menunggu Pick Up' : o.status==='dibatalkan' ? 'Dibatalkan' : 'Selesai';
+  const prepSec = o.status==='disiapkan' ? Math.max(0, Math.ceil((o.prepEnd - Date.now())/1000)) : 0;
+  const prepPct = o.status==='disiapkan' ? Math.max(0, Math.min(100, (o.prepEnd - Date.now())/PREP_MS*100)) : 0;
   const clickAttr = o.status==='menunggu_penilaian' ? `onclick="toggleRating('${o.id}')" style="cursor:pointer"`
                    : o.status==='dikirim' ? `onclick="openTracking('${o.id}')" style="cursor:pointer"` : '';
   return `
@@ -1706,14 +1832,17 @@ function renderOrderCard(o, pillClass){
       <div class="order-info">
         <div class="name">${p?p.name:'Produk'} · ${o.qty}x</div>
         <div class="meta">${fmtDT(o.createdAt)}</div>
+        ${o.status==='disiapkan' ? `<div class="prep-bar"><i data-prepbar="${o.id}" style="width:${prepPct}%"></i></div><div class="prep-left" data-prep="${o.id}">Penjual menyiapkan pesananmu · lanjut dikirim dalam ${prepSec} dtk</div>` : ''}
       </div>
       <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
         <span class="status-pill ${pillClass}">${statusLabel}</span>
         <button class="btn btn-ghost" style="padding:5px 10px;font-size:11px;" onclick="event.stopPropagation();openChat('order','${o.id}','${p?p.supplier:'Penjual'}')">${ICON.chat} Chat</button>
+        ${o.status==='disiapkan' ? `<button class="btn-cancel" onclick="event.stopPropagation();openCancel('${o.id}')">Cancel</button>` : ''}
       </div>
     </div>
     ${isRatingOpen ? renderRatingBox(o) : ''}
     ${o.status==='selesai' && o.rating ? `<div style="font-size:12px;color:var(--ink-soft);margin:-4px 0 10px 66px;">⭐ ${o.rating}/5 — "${o.review}"</div>` : ''}
+    ${o.status==='dibatalkan' ? `<div style="font-size:12px;color:var(--ink-soft);margin:-4px 0 10px 66px;">${o.appeal ? `Banding: ${o.appeal.type} · Alasan: ${svgEsc(o.appeal.reason)}` : `Dibatalkan pembeli · Alasan: ${svgEsc(o.cancelReason||'-')}`}</div>` : ''}
   </div>`;
 }
 
@@ -1731,7 +1860,10 @@ function renderRatingBox(o){
       ${[1,2,3,4,5].map(i=>`<button class="${i<=r?'filled':''}" onclick="setTempRating(${i})">★</button>`).join('')}
     </div>
     <textarea id="review-text" placeholder="Tulis ulasanmu di sini..." style="width:100%;border:1px solid var(--sage-line);border-radius:10px;padding:9px 11px;font-size:13px;min-height:60px;margin-bottom:10px;"></textarea>
-    <button class="btn btn-primary" onclick="submitRating('${o.id}')">Kirim Penilaian</button>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button class="btn btn-primary" onclick="submitRating('${o.id}')">Kirim Penilaian</button>
+      <button class="btn btn-ghost" onclick="openAppeal('${o.id}')">Ajukan Banding</button>
+    </div>
   </div>`;
 }
 function setTempRating(v){ state.tempRating = v; render(); }
@@ -1744,6 +1876,97 @@ function submitRating(orderId){
   state.ratingOpenFor = null;
   toast('Terima kasih atas penilaianmu!');
   render();
+}
+
+
+/* ---------- Disiapkan (6 detik), Cancel, Banding ---------- */
+const PREP_MS = 6000;
+function advancePrep(o){
+  o.status = o.ship === 'jemput' ? 'menunggu_pickup' : 'dikirim';
+  const mr = document.getElementById('modal-root');
+  if(state.cancelOrderId === o.id && mr && mr.innerHTML.trim()){ closeModal(); toast('Pesanan sudah masuk tahap ' + (o.status==='dikirim' ? 'pengiriman' : 'pick up') + ', tidak bisa dibatalkan lagi'); }
+  else toast(o.status==='dikirim' ? 'Pesananmu sekarang sedang dikirim 🚚' : 'Pesananmu siap diambil (pick up)');
+  state.cancelOrderId = null;
+  if(state.screen==='orders' || state.screen==='success'){ const y = window.scrollY; render(); window.scrollTo(0,y); }
+}
+setInterval(()=>{
+  ORDERS.forEach(o=>{
+    if(o.status !== 'disiapkan') return;
+    const ms = o.prepEnd - Date.now();
+    if(ms <= 0){ advancePrep(o); return; }
+    const t = document.querySelector('[data-prep="'+o.id+'"]');
+    if(t) t.textContent = 'Penjual menyiapkan pesananmu · lanjut dikirim dalam ' + Math.ceil(ms/1000) + ' dtk';
+    const b = document.querySelector('[data-prepbar="'+o.id+'"]');
+    if(b) b.style.width = Math.max(0, ms/PREP_MS*100) + '%';
+  });
+}, 200);
+
+const CANCEL_REASONS = ['Salah memilih produk','Ingin mengubah alamat / jadwal','Menemukan penawaran lain','Lainnya (ketik sendiri)'];
+function reasonListHTML(name, list, cb){
+  return `<div class="reason-list">${list.map((r,i)=>`<label class="reason-opt"><input type="radio" name="${name}" value="${i}" onchange="${cb}()"> ${r}</label>`).join('')}</div>`;
+}
+function openCancel(id){
+  const o = ORDERS.find(x=>x.id===id);
+  if(!o || o.status !== 'disiapkan'){ toast('Pesanan tidak bisa dibatalkan lagi'); return; }
+  state.cancelOrderId = id;
+  openModal(`
+    <div class="modal-head"><h2>Batalkan pesanan?</h2><button class="x-btn" onclick="closeModal()">✕</button></div>
+    <div class="hint" style="margin-bottom:6px;">Pilih alasan, atau jelaskan sendiri di kolom di bawah.</div>
+    ${reasonListHTML('cx-r', CANCEL_REASONS, 'cxPick')}
+    <textarea id="cx-text" class="reason-text" placeholder="Deskripsikan alasan pembatalanmu..."></textarea>
+    <div class="modal-actions"><button class="btn btn-ghost" onclick="closeModal()">Kembali</button><button class="btn btn-primary" style="background:var(--sambal)" onclick="submitCancel('${id}')">Batalkan Pesanan</button></div>`, 'modal-sm');
+}
+function cxPick(){ const r = document.querySelector('input[name="cx-r"]:checked'); const t = $id('cx-text'); if(r && +r.value === CANCEL_REASONS.length-1) t.focus(); }
+function submitCancel(id){
+  const o = ORDERS.find(x=>x.id===id);
+  if(!o || o.status !== 'disiapkan'){ closeModal(); toast('Pesanan sudah tidak bisa dibatalkan'); return; }
+  const r = document.querySelector('input[name="cx-r"]:checked'), txt = $id('cx-text').value.trim();
+  if(!r && !txt){ toast('Pilih alasan atau tulis alasan pembatalan'); return; }
+  const isOther = r && +r.value === CANCEL_REASONS.length-1;
+  if(isOther && !txt){ toast('Ketik alasanmu dulu'); return; }
+  o.status = 'dibatalkan';
+  o.cancelReason = [r && !isOther ? CANCEL_REASONS[+r.value] : '', txt].filter(Boolean).join(' — ');
+  state.cancelOrderId = null;
+  closeModal();
+  toast('Pesanan dibatalkan');
+  render();
+}
+
+const APPEAL_REASONS = ['Pesanan tidak sesuai jenisnya','Jumlah pesanan tidak sesuai','Lainnya (ketik sendiri)'];
+function openAppeal(id){
+  state.appealId = id;
+  openModal(`
+    <div class="modal-head"><h2>Ajukan Banding</h2><button class="x-btn" onclick="closeModal()">✕</button></div>
+    <div class="hint">Pilih alasan banding:</div>
+    ${reasonListHTML('ap-r', APPEAL_REASONS, 'apPick')}
+    <textarea id="ap-text" class="reason-text" style="display:none" placeholder="Ketik alasan bandingmu..."></textarea>
+    <div class="hint" style="margin:4px 0 6px;">Pilih solusi yang kamu inginkan:</div>
+    <div class="refund-btns">
+      <button class="btn btn-ghost" onclick="submitAppeal('Pengembalian uang')">Pengembalian uang</button>
+      <button class="btn btn-primary" onclick="submitAppeal('Pengembalian uang dan barang')">Pengembalian uang dan barang</button>
+    </div>`, 'modal-sm');
+}
+function apPick(){ const r = document.querySelector('input[name="ap-r"]:checked'); const t = $id('ap-text'); t.style.display = (r && +r.value === APPEAL_REASONS.length-1) ? 'block' : 'none'; if(t.style.display==='block') t.focus(); }
+function submitAppeal(type){
+  const o = ORDERS.find(x=>x.id===state.appealId);
+  if(!o || o.status !== 'menunggu_penilaian'){ closeModal(); return; }
+  const r = document.querySelector('input[name="ap-r"]:checked');
+  if(!r){ toast('Pilih alasan banding dulu'); return; }
+  let reason = APPEAL_REASONS[+r.value];
+  if(+r.value === APPEAL_REASONS.length-1){ const t = $id('ap-text').value.trim(); if(!t){ toast('Ketik alasan bandingmu dulu'); return; } reason = t; }
+  const id = o.id;
+  const mb = document.querySelector('#modal-root .modal');
+  mb.innerHTML = `<div class="proc-box"><div class="spin"></div><h3>Pengajuan diproses</h3><p>${type} · mohon tunggu sebentar...</p></div>`;
+  setTimeout(()=>{
+    const ord = ORDERS.find(x=>x.id===id);
+    if(!ord || ord.status !== 'menunggu_penilaian') return;
+    ord.status = 'dibatalkan';
+    ord.appeal = { type, reason };
+    state.ratingOpenFor = null;
+    closeModal();
+    toast('Banding diterima. Pesanan dipindah ke Dibatalkan');
+    if(state.screen==='orders') render();
+  }, 3000);
 }
 
 function openTracking(orderId){
@@ -2907,6 +3130,216 @@ state.formCat = 'k';
 state.formFiles = {};
 MY_SALES = genSales();
 render();
+
+/* =========================================================
+   AUTO MATCHING + RINCIAN BIAYA
+   Biaya layanan: konsumsi 5% · non-konsumsi 6% · Auto Matching +4% dari nilai pembelian
+   ========================================================= */
+const SVC_K = 0.05, SVC_N = 0.06, AM_FEE = 0.04;
+const AM_DAYS = [3,7,14,30];
+const AM_BUDGETS = [
+  {l:'Hemat (≤ Rp50rb)', min:0, max:50000},
+  {l:'Sedang (50–150rb)', min:50000, max:150000},
+  {l:'Besar (150–500rb)', min:150000, max:500000},
+  {l:'Bebas', min:0, max:0},
+];
+const amUnit = cat => cat==='k' ? 'porsi' : 'kg';
+const pct = r => (Math.round(r*1000)/10).toString().replace('.',',') + '%';
+
+function amInit(){
+  state.am = { date:'2026-08-23', time:'10:00', items:[{id:uid('i'), cat:'k', pid:'p1', qty:10}], min:0, max:0, mode:'once', days:7 };
+}
+function openAutoMatch(){ if(!state.am) amInit(); state.screen='automatch'; render(); }
+function amList(cat){ return PRODUCTS.filter(p=>!p.pending && p.cat===cat); }
+
+function amCalc(){
+  const a = state.am;
+  let subK=0, subN=0;
+  const lines = a.items.map(it=>{
+    const p = PRODUCTS.find(x=>x.id===it.pid);
+    const unit = p ? curPrice(p) : 0, qty = Math.max(0, +it.qty||0), amt = unit*qty;
+    if(it.cat==='k') subK += amt; else subN += amt;
+    return { it, p, unit, qty, amt };
+  });
+  const sub = subK + subN;
+  const svcK = Math.round(subK*SVC_K), svcN = Math.round(subN*SVC_N), amFee = Math.round(sub*AM_FEE);
+  const perOrder = sub + svcK + svcN + amFee;
+  const days = a.mode==='sub' ? Math.max(1, +a.days||1) : 1;
+  return { lines, subK, subN, sub, svcK, svcN, amFee, perOrder, days, total: perOrder*days };
+}
+function amRange(c){
+  const {min,max} = state.am;
+  if(max>0 && c.sub>max) return {k:'over', t:`Estimasi ${rupiah(c.sub)} melebihi range maksimal ${rupiah(max)}. Kurangi jumlah atau naikkan range.`};
+  if(min>0 && c.sub<min) return {k:'under', t:`Estimasi ${rupiah(c.sub)} masih di bawah range minimal ${rupiah(min)}.`};
+  if(min>0 || max>0) return {k:'ok', t:`Estimasi ${rupiah(c.sub)} masih di dalam range kamu ✅`};
+  return null;
+}
+
+/* rincian dipakai di halaman Auto Matching (samping) & halaman pembayaran */
+function amBreakdownHTML(c, withRange){
+  const a = state.am, rg = withRange ? amRange(c) : null;
+  return `<div class="am-bd">
+    ${c.lines.map(l=>`<div class="co-line"><span>${l.p?svgEsc(l.p.name):'–'} · ${l.qty} ${amUnit(l.it.cat)} × ${rupiah(l.unit)}</span><b>${rupiah(l.amt)}</b></div>`).join('')}
+    <hr>
+    ${c.subK?`<div class="co-line"><span>Subtotal konsumsi</span><b>${rupiah(c.subK)}</b></div>`:''}
+    ${c.subN?`<div class="co-line"><span>Subtotal non-konsumsi</span><b>${rupiah(c.subN)}</b></div>`:''}
+    <div class="co-line"><span><b>Nilai pembelian</b></span><b>${rupiah(c.sub)}</b></div>
+    <hr>
+    ${c.subK?`<div class="co-line"><span>Biaya layanan konsumsi<span class="rate">${pct(SVC_K)}</span></span><b>${rupiah(c.svcK)}</b></div>`:''}
+    ${c.subN?`<div class="co-line"><span>Biaya layanan non-konsumsi<span class="rate">${pct(SVC_N)}</span></span><b>${rupiah(c.svcN)}</b></div>`:''}
+    <div class="co-line"><span>Biaya Auto Matching<span class="rate am">+${pct(AM_FEE)}</span></span><b>${rupiah(c.amFee)}</b></div>
+    <hr>
+    <div class="co-line"><span>Total per pesanan</span><b>${rupiah(c.perOrder)}</b></div>
+    ${a.mode==='sub'?`<div class="co-line"><span>Langganan × ${c.days} hari</span><b>× ${c.days}</b></div>`:''}
+    <div class="co-total"><span>Total bayar</span><b>${rupiah(c.total)}</b></div>
+    ${rg?`<div class="am-status ${rg.k}">${rg.t}</div>`:''}
+  </div>`;
+}
+
+function amRowHTML(it){
+  const list = amList(it.cat);
+  return `<div class="am-row" data-row="${it.id}">
+    <select onchange="amSetCat('${it.id}',this.value)">
+      <option value="k" ${it.cat==='k'?'selected':''}>🍽️ Konsumsi</option>
+      <option value="n" ${it.cat==='n'?'selected':''}>♻️ Non-konsumsi</option>
+    </select>
+    <select onchange="amSetPid('${it.id}',this.value)">
+      ${list.map(p=>`<option value="${p.id}" ${p.id===it.pid?'selected':''}>${p.emoji} ${svgEsc(p.name)}</option>`).join('')}
+    </select>
+    <div class="am-qty"><input type="number" min="1" value="${it.qty}" oninput="amSetQty('${it.id}',this.value)"><small>${amUnit(it.cat)}</small></div>
+    <button class="am-del" onclick="amDel('${it.id}')" aria-label="Hapus">✕</button>
+    <div class="hint" id="am-h-${it.id}"></div>
+  </div>`;
+}
+function renderAutoMatch(){
+  if(!state.am) amInit();
+  const a = state.am, c = amCalc();
+  return `
+  <button class="back-link" onclick="goTo('home')">${ICON.back} Kembali ke Beranda</button>
+  <div class="page-head"><div><div class="eyebrow">Auto Matching</div><h1>Pesan sesuai kebutuhanmu ⚡</h1><div class="sub">Isi kebutuhanmu, kami carikan penjual yang cocok. Estimasi harga langsung muncul.</div></div></div>
+  <div class="co-layout">
+    <div class="xl-card co-main">
+      <div class="am-sec">
+        <h4><i>1</i> Jam berapa pesanan ingin dilakukan?</h4>
+        <div class="form-grid2" style="margin:0">
+          <div class="form-row" style="margin:0"><label>Tanggal</label><input type="date" value="${a.date}" oninput="state.am.date=this.value"></div>
+          <div class="form-row" style="margin:0"><label>Jam</label><input type="time" value="${a.time}" oninput="state.am.time=this.value"></div>
+        </div>
+      </div>
+
+      <div class="am-sec">
+        <h4><i>2</i> Barang yang dibutuhkan</h4>
+        ${a.items.map(amRowHTML).join('')}
+        <button class="am-add" onclick="amAdd()">＋ Tambah barang lain</button>
+        <div class="hint" style="margin-top:8px">Konsumsi dihitung per porsi/pcs, non-konsumsi per kg. Kamu bebas campur banyak barang sekaligus.</div>
+      </div>
+
+      <div class="am-sec">
+        <h4><i>3</i> Atur range harga (per pesanan)</h4>
+        <div class="am-seg">${AM_BUDGETS.map((b,i)=>`<button class="${a.min===b.min&&a.max===b.max?'on':''}" onclick="amPreset(${i})">${b.l}</button>`).join('')}</div>
+        <div class="am-range">
+          <div class="form-row" style="margin:0"><label>Harga minimal (Rp)</label><input id="am-min" type="number" min="0" step="1000" value="${a.min||''}" placeholder="0" oninput="amSetBudget('min',this.value)"></div>
+          <div class="form-row" style="margin:0"><label>Harga maksimal (Rp)</label><input id="am-max" type="number" min="0" step="1000" value="${a.max||''}" placeholder="Tanpa batas" oninput="amSetBudget('max',this.value)"></div>
+        </div>
+      </div>
+
+      <div class="am-sec">
+        <h4><i>4</i> Jenis pemesanan</h4>
+        <div class="am-seg">
+          <button class="${a.mode==='once'?'on':''}" onclick="amSetMode('once')">Sekali pesan</button>
+          <button class="${a.mode==='sub'?'on':''}" onclick="amSetMode('sub')">🔁 Langganan</button>
+        </div>
+        ${a.mode==='sub' ? `
+          <div class="am-sub-note">Pilih berapa hari kamu mau langganan. Pesanan yang sama akan disiapkan setiap hari di jam yang kamu pilih, dan dibayar langsung di muka.</div>
+          <div class="am-seg" style="margin-top:12px">${AM_DAYS.map(d=>`<button class="${+a.days===d?'on':''}" onclick="amSetDays(${d})">${d} hari</button>`).join('')}</div>
+          <div class="form-row" style="margin:12px 0 0;max-width:220px"><label>Atau hari lainnya</label><input id="am-days" type="number" min="1" max="90" value="${a.days}" oninput="amCustomDays(this.value)"></div>` : ''}
+      </div>
+
+      <button class="btn btn-turmeric btn-block big" onclick="amGoPay()">${a.mode==='sub'?'Langganan & Bayar':'Lanjut ke Pembayaran'}</button>
+    </div>
+    <aside class="xl-card co-side" id="am-side">${amSideHTML(c)}</aside>
+  </div>`;
+}
+function amSideHTML(c){
+  return `<h3 style="font-size:16px;margin-bottom:14px">Estimasi harga</h3>${amBreakdownHTML(c,true)}
+    <div class="hint" style="margin-top:10px">Harga mengikuti harga dinamis produk saat ini.</div>`;
+}
+function amRefresh(){
+  const c = amCalc(), s = document.getElementById('am-side');
+  if(s) s.innerHTML = amSideHTML(c);
+  c.lines.forEach(l=>{
+    const h = document.getElementById('am-h-'+l.it.id);
+    if(h) h.textContent = l.p ? `${rupiah(l.unit)} / ${amUnit(l.it.cat)} · ${l.p.supplier} · subtotal ${rupiah(l.amt)}` : '';
+  });
+}
+function amSetCat(id,cat){ const it = state.am.items.find(x=>x.id===id); it.cat = cat; it.pid = amList(cat)[0].id; render(); }
+function amSetPid(id,v){ state.am.items.find(x=>x.id===id).pid = v; amRefresh(); }
+function amSetQty(id,v){ state.am.items.find(x=>x.id===id).qty = Math.max(0, parseFloat(v)||0); amRefresh(); }
+function amAdd(){ state.am.items.push({id:uid('i'), cat:'k', pid:amList('k')[0].id, qty:5}); render(); }
+function amDel(id){ if(state.am.items.length<=1){ toast('Minimal satu barang ya'); return; } state.am.items = state.am.items.filter(x=>x.id!==id); render(); }
+function amPreset(i){ state.am.min = AM_BUDGETS[i].min; state.am.max = AM_BUDGETS[i].max; render(); }
+function amSetBudget(k,v){ state.am[k] = Math.max(0, parseInt(v)||0); amRefresh(); }
+function amSetMode(m){ state.am.mode = m; render(); }
+function amSetDays(d){ state.am.days = d; render(); }
+function amCustomDays(v){ state.am.days = Math.min(90, Math.max(1, parseInt(v)||1)); amRefresh(); }
+function amGoPay(){
+  const a = state.am, c = amCalc();
+  if(a.items.some(it=>!(+it.qty>0))){ toast('Isi jumlah barang dulu ya'); return; }
+  if(!a.date || !a.time){ toast('Pilih tanggal & jam pesanan dulu'); return; }
+  if(a.max>0 && a.min>a.max){ toast('Harga minimal tidak boleh lebih besar dari maksimal'); return; }
+  const rg = amRange(c);
+  if(rg && rg.k==='over'){ toast('Estimasi melebihi range maksimal. Sesuaikan dulu ya'); return; }
+  state.screen = 'ampay'; render();
+}
+function amDateLabel(){
+  const a = state.am, d = new Date(a.date+'T'+a.time), f = x=>x.toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'});
+  if(a.mode!=='sub') return `${f(d)} · ${a.time}`;
+  const e = new Date(d); e.setDate(e.getDate()+a.days-1);
+  return `${f(d)} s/d ${f(e)} · tiap hari ${a.time} (${a.days} hari)`;
+}
+function renderAmPay(){
+  if(!state.am) return renderBuyerHome();
+  const c = amCalc();
+  return `
+  <button class="back-link" onclick="state.screen='automatch';render()">${ICON.back} Ubah pesanan</button>
+  <div class="page-head"><div><div class="eyebrow">Auto Matching · Pembayaran</div><h1>${state.am.mode==='sub'?'Langganan Auto Matching':'Pesanan Auto Matching'}</h1><div class="sub">Jadwal: ${amDateLabel()}</div></div></div>
+  <div class="co-layout">
+    <div class="xl-card co-main">
+      <h3>Pembayaran QRIS</h3>
+      <div class="qris-box">
+        <img src="data:image/jpeg;base64,${QRIS_IMG}" alt="Kode QRIS Nampan.id" style="width:100%;max-width:300px;border-radius:16px;margin:0 auto 14px;display:block;box-shadow:var(--shadow-card);">
+        <div class="qris-total">${rupiah(c.total)}</div>
+        <div class="qris-label">Scan kode QRIS di atas dengan e-wallet/m-banking apa saja, lalu masukkan nominal <b>${rupiah(c.total)}</b> untuk membayar ke Nampan.id</div>
+      </div>
+      <button class="btn btn-turmeric btn-block big" onclick="amConfirm()">Saya Sudah Bayar</button>
+    </div>
+    <aside class="xl-card co-side"><h3 style="font-size:16px;margin-bottom:14px">Rincian pembayaran</h3>${amBreakdownHTML(c,false)}</aside>
+  </div>`;
+}
+function amConfirm(){
+  const a = state.am, c = amCalc(), me = BPF();
+  const who = me.name || 'Pembeli', phone = me.phone || '';
+  let firstId = null;
+  c.lines.forEach(l=>{
+    if(!l.p) return;
+    const share = c.sub ? l.amt/c.sub : 0;
+    const id = uid('o');
+    if(!firstId) firstId = id;
+    ORDERS.unshift({ id, productId:l.p.id, qty:l.qty, buyerName:who, ship:'jemput', total:Math.round(c.perOrder*share)*c.days,
+      status:'disiapkan', prepEnd:Date.now()+PREP_MS, rating:null, review:'', createdAt:new Date().toISOString(),
+      auto:true, sub: a.mode==='sub' ? {days:a.days} : null });
+    MY_SALES.unshift({ id:uid('s'), productId:l.p.id, qty:l.qty, buyerName:who, phone, ship:'diambil',
+      code:'NMP-'+Math.random().toString(36).slice(2,7).toUpperCase(), status:'baru', createdAt:new Date().toISOString() });
+  });
+  state.lastOrderId = firstId;
+  if(firstId){
+    const p = PRODUCTS.find(x=>x.id===ORDERS.find(o=>o.id===firstId).productId);
+    CHATS[chatKey('order', firstId)] = [{from:'them', text:`Halo ${who}, pesanan Auto Matching kamu (${amDateLabel()}) sudah kami terima & dibayar 🙏 Kami siapkan sesuai jadwal ya!`}];
+  }
+  state.am = null;
+  state.screen = 'success';
+  render();
+}
 </script>
 </body>
 </html>
