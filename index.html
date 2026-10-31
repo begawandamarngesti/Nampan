@@ -1175,20 +1175,18 @@ function thumb(url, w){
 function hashStr(s){ let h=2166136261; for(const c of String(s)){ h^=c.charCodeAt(0); h=Math.imul(h,16777619)>>>0; } return h; }
 
 /* ---------- Harga turun dinamis (waktu dipercepat: 1 detik = 5 menit) ---------- */
+const DROP_PCT = 5, DROP_STEPS = 5;
 function dropInfo(p){
-  if(!p.drop || !p.drop.pct) return null;
-  const iv = +p.drop.iv || 60, secs = Math.max(3, iv/5);
-  const floor = Math.max(+p.drop.final||0, Math.round(p.price*0.4/100)*100);
-  const off = (hashStr(p.id)%1000)/1000*secs;
-  const step = Math.max(0, Math.floor(((Date.now()-PAGE_T0)/1000 + off)/secs));
-  const price = Math.max(floor, Math.round(p.price*(1 - p.drop.pct/100*step)/100)*100);
-  return { price, off: Math.round((1-price/p.price)*1000)/10, step, secs };
+  // Demo: tiap detik turun 5% dari harga awal, maksimal 5 kali, lalu kembali ke harga semula dan berulang.
+  const step = Math.floor((Date.now()-PAGE_T0)/1000) % (DROP_STEPS+1);
+  const price = Math.round(p.price*(1 - DROP_PCT/100*step)/10)*10;
+  return { price, off: DROP_PCT*step, step, secs:1 };
 }
 function curPrice(p){ const d = dropInfo(p); return d ? d.price : p.price; }
 function priceHTML(p, full){
   const d = dropInfo(p);
   if(!d) return `<span class="pr-now">${rupiah(p.price)}</span>`;
-  return `<span class="pr-now">${rupiah(d.price)}</span>${d.price<p.price?`<span class="pr-was">${rupiah(p.price)}</span><span class="pr-off">−${d.off}%</span>`:''}${full?`<div class="pr-rule">Harga turun ${p.drop.pct}% setiap ${ivLabel(p.drop.iv)} sampai batas bawah ${rupiah(Math.max(+p.drop.final||0, Math.round(p.price*0.4/100)*100))}. Waktu dipercepat untuk demo.</div>`:''}`;
+  return `<span class="pr-now">${rupiah(d.price)}</span>${d.price<p.price?`<span class="pr-was">${rupiah(p.price)}</span><span class="pr-off">−${d.off}%</span>`:''}${full?`<div class="pr-rule">Harga turun ${DROP_PCT}% setiap detik sebanyak ${DROP_STEPS} kali, lalu kembali ke harga semula dan berulang. Waktu dipercepat untuk demo.</div>`:''}`;
 }
 function tickPrices(){
   document.querySelectorAll('[data-pbox]').forEach(el=>{
@@ -1197,7 +1195,7 @@ function tickPrices(){
     if(el._last !== h){ el.innerHTML = h; el._last = h; }
   });
 }
-setInterval(tickPrices, 1000);
+setInterval(tickPrices, 250);
 // seed penurunan harga untuk produk konsumsi (demo)
 PRODUCTS.forEach((p,i)=>{
   if(!p.drop && p.cat==='k'){ const pc=[2,2,3,1.5,2.5][i%5], iv=[30,60,30,120,60][i%5]; p.drop = {pct:pc, iv, final:''}; }
